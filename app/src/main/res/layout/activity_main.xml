@@ -12,16 +12,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        >
+        android:layout_marginTop="16dp">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="@dimen/textViewHight"
             android:layout_weight="1"
-            android:textSize ="20sp"
+            android:textSize ="@dimen/textButtonSize"
             android:id="@+id/decShow"
-            android:text="Dec: "
+            android:text="@string/Dec"
             android:textColor="@color/background"
             android:paddingHorizontal="12dp"
             android:gravity="start|center"
@@ -34,7 +33,7 @@
             android:layout_weight="1"
             android:id="@+id/binShow"
             android:textSize ="20sp"
-            android:text="BIN: "
+            android:text="@string/BIN"
             android:textColor="@color/background"
             android:paddingHorizontal="12dp"
             android:gravity="start|center"

@@ -11,7 +11,7 @@
     </style>
 
     <style name="CalculaterButton">
-        <item name="android:textSize">@dimen/textButton</item>
+        <item name="android:textSize">@dimen/textButtonSize</item>
     </style>
 
     <style name="CalculaterButton.Number">

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Developer Calculater</string>
+    <string name="BIN">BIN: </string>
+    <string name="Dec">Dec: </string>
+
+
 </resources>
