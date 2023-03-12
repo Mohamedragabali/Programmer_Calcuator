@@ -8,8 +8,10 @@
     <color name="black">#FF000000</color>
     
     <color name="background">#464a58</color>
+    <color name="lightBackground">#61D1C4C4</color>
     <color name="brand">#3aac5a</color>
     <color name="brandDark">#1a8c3a</color>
+    <color name="lightBrand">#5247DF72</color>
     <color name="white">#fff</color>
     <color name="lightGray">#E0E0E0</color>
 

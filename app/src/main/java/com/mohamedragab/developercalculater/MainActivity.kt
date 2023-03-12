@@ -13,14 +13,28 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var resetBt : Button
-    lateinit var convertBt : Button
-    lateinit var radioGroup :RadioGroup
-    lateinit var hexShow  :TextView
-    lateinit var octShow  :TextView
-    lateinit var binShow  :TextView
-    lateinit var decShow  :TextView
-    lateinit var editText  :EditText
+    lateinit var resetBt: Button
+    lateinit var hexShow: TextView
+    lateinit var octShow: TextView
+    lateinit var binShow: TextView
+    lateinit var decShow: TextView
+    lateinit var charA: Button
+    lateinit var charB: Button
+    lateinit var charC: Button
+    lateinit var charD: Button
+    lateinit var charE: Button
+    lateinit var charF: Button
+    lateinit var zero: Button
+    lateinit var one: Button
+    lateinit var tow: Button
+    lateinit var three: Button
+    lateinit var four: Button
+    lateinit var five: Button
+    lateinit var six: Button
+    lateinit var siven: Button
+    lateinit var eight: Button
+    lateinit var nine: Button
+    var whereWrite: TextView? = null
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,78 +43,269 @@ class MainActivity : AppCompatActivity() {
 
 
         resetBt = findViewById(R.id.Reset)
-        convertBt = findViewById(R.id.Convert)
-        radioGroup = findViewById(R.id.radio_group)
         hexShow = findViewById(R.id.hexShow)
         octShow = findViewById(R.id.octShow)
         binShow = findViewById(R.id.binShow)
         decShow = findViewById(R.id.decShow)
-        editText = findViewById(R.id.editText)
+        charA = findViewById(R.id.charA)
+        charB = findViewById(R.id.charB)
+        charC = findViewById(R.id.charC)
+        charD = findViewById(R.id.charD)
+        charE = findViewById(R.id.charE)
+        charF = findViewById(R.id.charF)
+        zero = findViewById(R.id.zero)
+        one = findViewById(R.id.one)
+        tow = findViewById(R.id.tow)
+        three = findViewById(R.id.three)
+        four = findViewById(R.id.four)
+        five = findViewById(R.id.five)
+        six = findViewById(R.id.six)
+        siven = findViewById(R.id.siven)
+        eight = findViewById(R.id.eight)
+        nine = findViewById(R.id.nine)
+
+        resetBt.setOnClickListener {
+            reset()
+        }
+
+        //hexShow.setTextColor(R.color.white);
+        hexShow.setOnClickListener {
+            reset()
+            whereWrite = hexShow
+            hexShow.setText("")
+            hexShow.setBackgroundResource(R.drawable.circle_textview_selected)
+            octShow.setBackgroundResource(R.drawable.circle_textview)
+            binShow.setBackgroundResource(R.drawable.circle_textview)
+            decShow.setBackgroundResource(R.drawable.circle_textview)
+        }
+        octShow.setOnClickListener {
+            reset()
+            whereWrite = octShow
+            octShow.setText("")
+            hexShow.setBackgroundResource(R.drawable.circle_textview)
+            octShow.setBackgroundResource(R.drawable.circle_textview_selected)
+            binShow.setBackgroundResource(R.drawable.circle_textview)
+            decShow.setBackgroundResource(R.drawable.circle_textview)
+        }
+        binShow.setOnClickListener {
+            reset()
+            whereWrite = binShow
+            binShow.setText("")
+            hexShow.setBackgroundResource(R.drawable.circle_textview)
+            octShow.setBackgroundResource(R.drawable.circle_textview)
+            binShow.setBackgroundResource(R.drawable.circle_textview_selected)
+            decShow.setBackgroundResource(R.drawable.circle_textview)
+        }
+        decShow.setOnClickListener {
+            reset()
+            whereWrite = decShow
+            decShow.setText("")
+            hexShow.setBackgroundResource(R.drawable.circle_textview)
+            octShow.setBackgroundResource(R.drawable.circle_textview)
+            binShow.setBackgroundResource(R.drawable.circle_textview)
+            decShow.setBackgroundResource(R.drawable.circle_textview_selected)
+        }
+
+        zero.setOnClickListener {
+            writeInTextView("0")
+        }
+        one.setOnClickListener {
+            writeInTextView("1")
+        }
+        tow.setOnClickListener {
+            writeInTextView("2")
+        }
+        three.setOnClickListener {
+            writeInTextView("3")
+        }
+        four.setOnClickListener {
+            writeInTextView("4")
+        }
+        five.setOnClickListener {
+            writeInTextView("5")
+        }
+        six.setOnClickListener {
+            writeInTextView("6")
+        }
+        siven.setOnClickListener {
+            writeInTextView("7")
+        }
+        eight.setOnClickListener {
+            writeInTextView("8")
+        }
+        nine.setOnClickListener {
+            writeInTextView("9")
+        }
+        charA.setOnClickListener {
+            writeInTextView("A")
+        }
+        charB.setOnClickListener {
+            writeInTextView("B")
+        }
+        charC.setOnClickListener {
+            writeInTextView("C")
+        }
+        charD.setOnClickListener {
+            writeInTextView("D")
+        }
+        charE.setOnClickListener {
+            writeInTextView("E")
+        }
+        charF.setOnClickListener {
+            writeInTextView("F")
+        }
+
+        // hexShow.setTextColor(R.color.black);
+        // hexShow.setBackgroundResource(R.drawable.background_edittext)
 
         // hexShow.setText("hallo")
         // editText.text.toString()
         // Get radio group selected status and text using button click event
-        convertBt.setOnClickListener{
-            var id: Int = radioGroup.checkedRadioButtonId
-            if (id!=-1){
-                val radio:RadioButton = findViewById(id)
-                //  radio.text
-                if(radio.text == "HEX") {
-                    hexShow.setText("${editText.text.toString()}")
-                    binShow.setText("${hexTobinary(editText.text.toString())}")
-                    octShow.setText("${hexToOctal(editText.text.toString())}")
-                    decShow.setText("${hexToDecimal(editText.text.toString())}")
-                }
-                else if(radio.text == "OCT") {
+//        convertBt.setOnClickListener{
+//            var id: Int = radioGroup.checkedRadioButtonId
+//            if (id!=-1){
+//                val radio:RadioButton = findViewById(id)
+//                //  radio.text
+//                if(radio.text == "HEX") {
+//                    hexShow.setText("${editText.text.toString()}")
+//                    binShow.setText("${hexTobinary(editText.text.toString())}")
+//                    octShow.setText("${hexToOctal(editText.text.toString())}")
+//                    decShow.setText("${hexToDecimal(editText.text.toString())}")
+//                }
+//                else if(radio.text == "OCT") {
+//
+//                    hexShow.setText("${octalToHex(editText.text.toString())}")
+//                    binShow.setText("${octalTobinary(editText.text.toString())}")
+//                    octShow.setText("${editText.text.toString()}")
+//                    decShow.setText("${octalToDecimal(editText.text.toString())}")
+//                }
+//               else if(radio.text == "BIN"){
+//
+//                    hexShow.setText("${binaryToHex(editText.text.toString())}")
+//                    binShow.setText("${(editText.text.toString())}")
+//                    octShow.setText("${ binaryToOctal(editText.text.toString())  }")
+//                    decShow.setText("${ binaryToDecimal(editText.text.toString()) }")
+//                }
+//                else {
+//
+//                    hexShow.setText("${decimalToHex(editText.text.toString().toLong())}")
+//                    binShow.setText("${decimalTobinary(editText.text.toString().toLong())}")
+//                    octShow.setText("${decimalToOctal(editText.text.toString().toLong())   }")
+//                    decShow.setText("${ editText.text.toString() }")
+//                }
+//            }
+//            else
+//            {
+//                Toast.makeText(applicationContext,
+//                        " nothing selected please selcted number system ",
+//                    Toast.LENGTH_SHORT).show()
+//            }
+//
+//        }
+//
+    }
 
-                    hexShow.setText("${octalToHex(editText.text.toString())}")
-                    binShow.setText("${octalTobinary(editText.text.toString())}")
-                    octShow.setText("${editText.text.toString()}")
-                    decShow.setText("${octalToDecimal(editText.text.toString())}")
-                }
-               else if(radio.text == "BIN"){
+    fun writeInTextView(num: String) {
+        val hex = "HEX: "
+        val oct = "OCT: "
+        val bin = "BIN: "
+        val dec = "Dec: "
 
-                    hexShow.setText("${binaryToHex(editText.text.toString())}")
-                    binShow.setText("${(editText.text.toString())}")
-                    octShow.setText("${ binaryToOctal(editText.text.toString())  }")
-                    decShow.setText("${ binaryToDecimal(editText.text.toString()) }")
-                }
-                else {
-
-                    hexShow.setText("${decimalToHex(editText.text.toString().toLong())}")
-                    binShow.setText("${decimalTobinary(editText.text.toString().toLong())}")
-                    octShow.setText("${decimalToOctal(editText.text.toString().toLong())   }")
-                    decShow.setText("${ editText.text.toString() }")
-                }
-            }
-            else
-            {
-                Toast.makeText(applicationContext,
-                        " nothing selected please selcted number system ",
-                    Toast.LENGTH_SHORT).show()
-            }
-
+        val stringInTextView = whereWrite?.text.toString()
+        if( ( whereWrite == decShow && stringInTextView.length == 18 )
+            || (whereWrite == binShow && stringInTextView.length == 63)
+            ||(whereWrite == octShow && stringInTextView.length == 21 )
+            ||(whereWrite == hexShow && stringInTextView.length == 15))
+        {
+            Toast.makeText(
+                applicationContext,
+                "I am so sad my app can't do it with this length :( ",
+                Toast.LENGTH_SHORT
+            ).show()
         }
-        resetBt.setOnClickListener {
-            hexShow.setText("")
-            octShow.setText("")
-            binShow.setText("")
-            decShow.setText("")
+        else if (whereWrite == null) {
+            Toast.makeText(
+                applicationContext,
+                "please first select system number :) ",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else if (stringInTextView.length < 1 && num == "0") {
+            Toast.makeText(
+                applicationContext,
+                "are you joking you can't add 0 at first",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            if (whereWrite == hexShow) {
+                whereWrite!!.setText("$stringInTextView$num")
+                binShow.setText("$bin${hexTobinary(whereWrite!!.text.toString())}")
+                octShow.setText("$oct${hexToOctal(whereWrite!!.text.toString())}")
+                decShow.setText("$dec${hexToDecimal(whereWrite!!.text.toString())}")
+            } else if (num != "A" && num != "B" && num != "C" && num != "D" && num != "E" && num != "F") {
+                if (whereWrite == binShow && (num == "0" || num == "1")) {
+
+                    whereWrite!!.setText("$stringInTextView$num")
+                    hexShow.setText("$hex${binaryToHex(whereWrite!!.text.toString())}")
+                    octShow.setText("$oct${binaryToOctal(whereWrite!!.text.toString())}")
+                    decShow.setText("$dec${binaryToDecimal(whereWrite!!.text.toString())}")
+
+                } else if (whereWrite == decShow) {
+
+                    whereWrite!!.setText("$stringInTextView$num")
+                    hexShow.setText("$hex${decimalToHex(whereWrite!!.text.toString().toLong())}")
+                    binShow.setText("$bin${decimalTobinary(whereWrite!!.text.toString().toLong())}")
+                    octShow.setText("$oct${decimalToOctal(whereWrite!!.text.toString().toLong())}")
+                } else if (whereWrite == octShow) {
+
+                    whereWrite!!.setText("$stringInTextView$num")
+                    hexShow.setText("$hex${octalToHex(whereWrite!!.text.toString())}")
+                    binShow.setText("$bin${octalTobinary(whereWrite!!.text.toString())}")
+                    decShow.setText("$dec${octalToDecimal(whereWrite!!.text.toString())}")
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        "this number $num  Not all in this System Number",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "this number $num  Not all in this System Number",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
+
+    fun reset() {
+        whereWrite = null
+        hexShow.setText("HEX: ")
+        octShow.setText("OCT: ")
+        binShow.setText("BIN: ")
+        decShow.setText("Dec: ")
+        hexShow.setBackgroundResource(R.drawable.circle_textview)
+        octShow.setBackgroundResource(R.drawable.circle_textview)
+        binShow.setBackgroundResource(R.drawable.circle_textview)
+        decShow.setBackgroundResource(R.drawable.circle_textview)
+    }
+
+
 
 
     fun binaryToHex(binaryNumber: String): String {
         var st = binaryNumber.length
         var ans = ""
         while (st > 3) {
-            val decimalFourNumber = simpleDecimalToHex( binaryToDecimal(binaryNumber.substring(st - 4, st)) )
+            val decimalFourNumber =
+                simpleDecimalToHex(binaryToDecimal(binaryNumber.substring(st - 4, st)))
             ans = decimalFourNumber + ans
             st -= 4
         }
-        if(st > 0 ) ans = simpleDecimalToHex( binaryToDecimal(binaryNumber.substring(0, st)) ) + ans
+        if (st > 0) ans = simpleDecimalToHex(binaryToDecimal(binaryNumber.substring(0, st))) + ans
         return ans
     }
+
     fun simpleDecimalToHex(decimalNumber: String): String {
         return if (decimalNumber == "10") "A"
         else if (decimalNumber == "11") "B"
@@ -119,7 +324,7 @@ class MainActivity : AppCompatActivity() {
             ans = decimalFourNumber + ans
             st -= 3
         }
-        if(st > 0 ) ans = binaryToDecimal(binaryNumber.substring(0, st)) + ans
+        if (st > 0) ans = binaryToDecimal(binaryNumber.substring(0, st)) + ans
         return ans
     }
 
@@ -140,24 +345,29 @@ class MainActivity : AppCompatActivity() {
         if (decimalNumber == 0L) return ""
         return "${decimalTobinary(decimalNumber / 2)}${decimalNumber % 2}"
     }
+
     fun decimalTobinary(decimalNumber: Int): String {
         if (decimalNumber == 0) return ""
         return "${decimalTobinary(decimalNumber / 2)}${decimalNumber % 2}"
     }
-    fun decimalToOctal(decimalNumber: Int ) : String {
+
+    fun decimalToOctal(decimalNumber: Int): String {
         return binaryToOctal(decimalTobinary(decimalNumber))
-    }
-    fun decimalToOctal(decimalNumber: Long ) : String {
-        return binaryToOctal(decimalTobinary(decimalNumber))
-    }
-    fun decimalToOcHex(decimalNumber: Int ) : String {
-        return binaryToHex(decimalTobinary(decimalNumber))
-    }
-    fun decimalToHex(decimalNumber: Long ) : String {
-        return binaryToHex( decimalTobinary(decimalNumber))
     }
 
-    fun simpleHexTOBinary(hexNumber : Char ) :String {
+    fun decimalToOctal(decimalNumber: Long): String {
+        return binaryToOctal(decimalTobinary(decimalNumber))
+    }
+
+    fun decimalToOcHex(decimalNumber: Int): String {
+        return binaryToHex(decimalTobinary(decimalNumber))
+    }
+
+    fun decimalToHex(decimalNumber: Long): String {
+        return binaryToHex(decimalTobinary(decimalNumber))
+    }
+
+    fun simpleHexTOBinary(hexNumber: Char): String {
         return if (hexNumber == '0') "0000"
         else if (hexNumber == '1') "0001"
         else if (hexNumber == '2') "0010"
@@ -175,24 +385,26 @@ class MainActivity : AppCompatActivity() {
         else if (hexNumber == 'E') "1110"
         else "1111"
     }
-    fun hexTobinary (hexNumber: String ): String {
+
+    fun hexTobinary(hexNumber: String): String {
         var ans = ""
-        for(i in hexNumber.length-1 downTo  0  ) {
-            ans = simpleHexTOBinary( hexNumber[i] ) + ans
+        for (i in hexNumber.length - 1 downTo 0) {
+            ans = simpleHexTOBinary(hexNumber[i]) + ans
         }
         return ans
     }
 
-    fun hexToDecimal(hexNumber: String):String{
+    fun hexToDecimal(hexNumber: String): String {
         return binaryToDecimal(hexTobinary(hexNumber))
     }
-    fun hexToOctal (hexNumber: String):String{
+
+    fun hexToOctal(hexNumber: String): String {
         return binaryToOctal(hexTobinary(hexNumber))
     }
 
 
-    fun simpleOctalTOBinary(octalNumber: Char ) :String {
-        return if (octalNumber == '0')"000"
+    fun simpleOctalTOBinary(octalNumber: Char): String {
+        return if (octalNumber == '0') "000"
         else if (octalNumber == '1') "001"
         else if (octalNumber == '2') "010"
         else if (octalNumber == '3') "011"
@@ -201,22 +413,22 @@ class MainActivity : AppCompatActivity() {
         else if (octalNumber == '6') "110"
         else "111"
     }
-    fun octalTobinary (octalNumber: String ): String {
+
+    fun octalTobinary(octalNumber: String): String {
         var ans = ""
-        for(i in octalNumber.length-1 downTo  0  ) {
-            ans = simpleOctalTOBinary( octalNumber[i] ) + ans
+        for (i in octalNumber.length - 1 downTo 0) {
+            ans = simpleOctalTOBinary(octalNumber[i]) + ans
         }
         return ans
     }
 
-    fun octalToDecimal(octalNumber: String ) : String {
+    fun octalToDecimal(octalNumber: String): String {
         return binaryToDecimal(octalTobinary(octalNumber))
     }
-    fun octalToHex (octalNumber: String ): String{
+
+    fun octalToHex(octalNumber: String): String {
         return binaryToHex(octalTobinary(octalNumber))
     }
-
-
 
 
 }

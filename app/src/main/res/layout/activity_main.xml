@@ -7,179 +7,259 @@
     android:orientation="vertical"
     android:background="@color/background">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginHorizontal="16dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
         >
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp">
-            <TextView
-                android:id="@+id/decShow"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="64dp"
-                android:layout_marginBottom="16dp"/>
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:text  ="Dec"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:gravity = "center"/>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:id="@+id/decShow"
+            android:text="Dec: "
+            android:textColor="@color/background"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            android:background="@drawable/circle_textview"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp">
-            <TextView
-                android:id="@+id/binShow"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="64dp"
-                android:layout_marginBottom="16dp"/>
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:text  ="BIN"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:gravity = "center"/>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:id="@+id/binShow"
+            android:text="BIN: "
+            android:textColor="@color/background"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            android:background="@drawable/circle_textview"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp">
-            <TextView
-                android:id="@+id/octShow"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="64dp"
-                android:layout_marginBottom="16dp"/>
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:text  ="OCT"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:gravity = "center"/>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="64dp"
+            android:text  ="OCT: "
+            android:id="@+id/octShow"
+            android:layout_weight="1"
+            android:textColor="@color/background"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            android:background="@drawable/circle_textview"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp">
-            <TextView
-                android:id="@+id/hexShow"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="64dp"
-                android:layout_marginBottom="16dp"/>
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:text  ="HEX"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:gravity = "center"/>
-        </LinearLayout>
-
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginHorizontal="16dp"
-            android:paddingHorizontal="24dp"
-            android:hint = "write number here "
-            android:textSize="24sp"
-            android:textColor="@color/brandDark"
-            android:gravity="center|start">
-        </EditText>
-
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <RadioButton
-                android:id="@+id/DEC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="DEC" />
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="0dp"/>
-            <RadioButton
-                android:id="@+id/BIN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BIN" />
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="0dp"/>
-
-            <RadioButton
-                android:id="@+id/OCT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="OCT" />
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="0dp"/>
-            <RadioButton
-                android:id="@+id/HEX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="HEX" />
-        </RadioGroup>
-
+            android:layout_height="64dp"
+            android:id="@+id/hexShow"
+            android:text  ="HEX: "
+            android:layout_weight="1"
+            android:textColor="@color/background"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            android:background="@drawable/circle_textview"
+            android:layout_marginBottom="16dp"/>
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
 
-        <androidx.appcompat.widget.AppCompatButton
 
-            android:id="@+id/Reset"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style = "@style/CalculaterButton.ResultButton"
-            android:text="reset" />
-        <View
-            android:layout_width="24dp"
-            android:layout_height="0dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Convert"
-            android:layout_width="0dp"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/nine"
+                style = "@style/CalculaterButton.Number"
+                android:text = "9"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charF"
+                style = "@style/CalculaterButton.Char"
+                android:text = "F"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charE"
+                style = "@style/CalculaterButton.Char"
+                android:text = "E"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charD"
+                style = "@style/CalculaterButton.Char"
+                android:text = "D"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style = "@style/CalculaterButton.ResultButton"
-            android:text="convert" />
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/six"
+                style = "@style/CalculaterButton.Number"
+                android:text = "6"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/siven"
+                style = "@style/CalculaterButton.Number"
+                android:text = "7"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/eight"
+                style = "@style/CalculaterButton.Number"
+                android:text = "8"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charC"
+                style = "@style/CalculaterButton.Char"
+                android:text = "C"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/three"
+                style = "@style/CalculaterButton.Number"
+                android:text = "3"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/four"
+                style = "@style/CalculaterButton.Number"
+                android:text = "4"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/five"
+                style = "@style/CalculaterButton.Number"
+                android:text = "5"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charB"
+                style = "@style/CalculaterButton.Char"
+                android:text = "B"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/zero"
+                style = "@style/CalculaterButton.Number"
+                android:text = "0"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/one"
+                style = "@style/CalculaterButton.Number"
+                android:text = "1"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/tow"
+                style = "@style/CalculaterButton.Number"
+                android:text = "2"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/charA"
+                style = "@style/CalculaterButton.Char"
+                android:text = "A"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Reset"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style = "@style/CalculaterButton.ResultButton"
+                android:text="reset" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
