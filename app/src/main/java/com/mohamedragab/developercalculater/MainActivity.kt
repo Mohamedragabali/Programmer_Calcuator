@@ -155,54 +155,6 @@ class MainActivity : AppCompatActivity() {
             writeInTextView("F")
         }
 
-        // hexShow.setTextColor(R.color.black);
-        // hexShow.setBackgroundResource(R.drawable.background_edittext)
-
-        // hexShow.setText("hallo")
-        // editText.text.toString()
-        // Get radio group selected status and text using button click event
-//        convertBt.setOnClickListener{
-//            var id: Int = radioGroup.checkedRadioButtonId
-//            if (id!=-1){
-//                val radio:RadioButton = findViewById(id)
-//                //  radio.text
-//                if(radio.text == "HEX") {
-//                    hexShow.setText("${editText.text.toString()}")
-//                    binShow.setText("${hexTobinary(editText.text.toString())}")
-//                    octShow.setText("${hexToOctal(editText.text.toString())}")
-//                    decShow.setText("${hexToDecimal(editText.text.toString())}")
-//                }
-//                else if(radio.text == "OCT") {
-//
-//                    hexShow.setText("${octalToHex(editText.text.toString())}")
-//                    binShow.setText("${octalTobinary(editText.text.toString())}")
-//                    octShow.setText("${editText.text.toString()}")
-//                    decShow.setText("${octalToDecimal(editText.text.toString())}")
-//                }
-//               else if(radio.text == "BIN"){
-//
-//                    hexShow.setText("${binaryToHex(editText.text.toString())}")
-//                    binShow.setText("${(editText.text.toString())}")
-//                    octShow.setText("${ binaryToOctal(editText.text.toString())  }")
-//                    decShow.setText("${ binaryToDecimal(editText.text.toString()) }")
-//                }
-//                else {
-//
-//                    hexShow.setText("${decimalToHex(editText.text.toString().toLong())}")
-//                    binShow.setText("${decimalTobinary(editText.text.toString().toLong())}")
-//                    octShow.setText("${decimalToOctal(editText.text.toString().toLong())   }")
-//                    decShow.setText("${ editText.text.toString() }")
-//                }
-//            }
-//            else
-//            {
-//                Toast.makeText(applicationContext,
-//                        " nothing selected please selcted number system ",
-//                    Toast.LENGTH_SHORT).show()
-//            }
-//
-//        }
-//
     }
 
     fun writeInTextView(num: String) {
